@@ -1,0 +1,29 @@
+{
+    "name": "douyasi/locator",
+    "description": "Preferred Language Detector for Laravel",
+    "keywords": ["Laravel", "Lumen", "Localization", "Language", "Detector", "YASCMF", "Locator","i18n"],
+    "license": "MIT",
+    "homepage": "http://douyasi.com",
+    "support": {
+        "issues": "https://github.com/douyasi/locator/issues",
+        "source": "https://github.com/douyasi/locator"
+    },
+    "authors": [
+        {
+            "name": "raoyc",
+            "email": "raoyc2009@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-intl": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Douyasi\\Locator\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "minimum-stability": "dev"
+}
