@@ -13,7 +13,7 @@ Get [Composer](https://getcomposer.org/), then run in terminal:
 
 ```bash
 cd /path/to/your-project
-composer require 'douyasi/locator: dev-master'
+composer require 'douyasi/locator: ~1.0'
 ```
 
 Usage
