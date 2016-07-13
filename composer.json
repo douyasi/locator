@@ -1,6 +1,6 @@
 {
     "name": "douyasi/locator",
-    "description": "Preferred Language Detector for Laravel",
+    "description": "Browser Preferred Language Detector",
     "keywords": ["Laravel", "Lumen", "Localization", "Language", "Detector", "YASCMF", "Locator","i18n"],
     "license": "MIT",
     "homepage": "http://douyasi.com",
