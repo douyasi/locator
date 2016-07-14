@@ -80,7 +80,7 @@ class PreferredLanguageDetector
     public function parse_accept_language()
     {
         $locales = [];
-        $accept_language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+        $accept_language = isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) ? $_SERVER['HTTP_ACCEPT_LANGUAGE'] : '';
         $accept_language = str_replace(' ', '', $accept_language);
         $re = preg_match_all('/(.*?);q=([0-9.]+)(?:,?)/i', $accept_language, $matches);
         if ($re) {
