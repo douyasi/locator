@@ -14,14 +14,14 @@ if (!function_exists('multi_array_sort')) {
     function multi_array_sort($arr, $order_by, $order_way, $type = null)
     {
 
-        $order_by = (array) $order_by;
-        $order_way = (array) $order_way;
+        $order_by = is_array($order_by) ? $order_by : [$order_by];
+        $order_way = is_array($order_way) ? $order_way : [$order_way];
 
         if (!empty($type)) {
-            $type = (array) $type;
+            $type = is_array($type) ? $type : [$type];
         }
 
-        $args = array();
+        $args = [];
         foreach ($order_by as $key => $value) {
             $args[] = array_column($arr, $value);
             $args[] = $order_way[$key] == 'desc' ? SORT_DESC : SORT_ASC;

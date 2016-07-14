@@ -51,7 +51,7 @@ class PreferredLanguageDetector
     {
 
         $preferredLanguages = $this->parse_accept_language();
-        $languagePreference = array();
+        $languagePreference = [];
 
         if (empty($locales)) {
 
@@ -88,7 +88,7 @@ class PreferredLanguageDetector
      */
     public function parse_accept_language()
     {
-        $locales = array();
+        $locales = [];
         $accept_language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
         $accept_language = str_replace(' ', '', $accept_language);
         $re = preg_match_all("/(.*?);q=([0-9.]+)(?:,?)/i", $accept_language, $matches);
@@ -105,22 +105,22 @@ class PreferredLanguageDetector
      */
     public function get_languages(array $lang_tags_arary, array $priority_array)
     {
-        $accept_languages = array();
+        $accept_languages = [];
         foreach ($lang_tags_arary as $key => $lang_tags)
         {
             $tags = explode(',', $lang_tags);
             $priority = isset($priority_array[$key]) ? (int)(floatval($priority_array[$key])*100) : 0;
-            $locale_array = array();
+            $locale_array = [];
             foreach ($tags as $tag) {
                 $locale = Locale::parseLocale($tag);
                 $locale = $this->fill_locale_array_key($locale);
                 $locale_array[] = $locale;
             }
-            $accept_languages[] = array(
+            $accept_languages[] = [
                 'priority' => $priority,
                 'tags'     => $lang_tags,
                 'locales'  => $locale_array
-            );
+            ];
         }
         return $accept_languages;
     }
