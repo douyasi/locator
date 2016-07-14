@@ -8,12 +8,12 @@ if (!function_exists('multi_array_sort')) {
      * @param array $arr
      * @param mixed $order_by
      * @param mixed $order_way 'desc' for SORT_DESC | 'asc' for SORT_ASC
-     * @param mixed $type SORT_REGULAR | SORT_NUMERIC | SORT_STRING
+     * @param mixed $type      SORT_REGULAR | SORT_NUMERIC | SORT_STRING
+     *
      * @return array
      **/
     function multi_array_sort($arr, $order_by, $order_way, $type = null)
     {
-
         $order_by = is_array($order_by) ? $order_by : [$order_by];
         $order_way = is_array($order_way) ? $order_way : [$order_way];
 
@@ -31,7 +31,7 @@ if (!function_exists('multi_array_sort')) {
         }
         $args[] = &$arr;
         $res = call_user_func_array('array_multisort', $args);
+
         return $arr;
     }
-
 }

@@ -2,7 +2,6 @@
 
 namespace Douyasi\Locator;
 
-
 use Locale;
 
 /**
@@ -12,7 +11,6 @@ use Locale;
  */
 class PreferredLanguageDetector
 {
-
     private $empty_locale = [
         'language' => '',
         'script'   => '',
@@ -27,7 +25,6 @@ class PreferredLanguageDetector
 
     /**
      * Alias function for parse_accept_language.
-     *
      */
     public function get()
     {
@@ -36,7 +33,6 @@ class PreferredLanguageDetector
 
     /**
      * Alias function for get_preferred_language.
-     *
      */
     public function detect($locales = null)
     {
@@ -45,20 +41,15 @@ class PreferredLanguageDetector
 
     /**
      * Get Preferred language info.
-     * 
      */
     public function get_preferred_language($locales = null)
     {
-
         $preferredLanguages = $this->parse_accept_language();
         $languagePreference = [];
 
         if (empty($locales)) {
-
             return isset($preferredLanguages[0]['locales'][0]['language']) ? $preferredLanguages[0]['locales'][0]['language'] : null;
-
         } else {
-
             if (!$preferredLanguages) {
                 return $locales[0];
             }
@@ -79,37 +70,36 @@ class PreferredLanguageDetector
             }
         }
         $languagePreference = multi_array_sort($languagePreference, ['priority', 'weight'], ['desc', 'desc']);
+
         return isset($languagePreference[0]['locale']) ? $languagePreference[0]['locale'] : $locales[0];
     }
 
     /**
      * Get all languages by browser  `Accept-Language` request header.
-     *
      */
     public function parse_accept_language()
     {
         $locales = [];
         $accept_language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
         $accept_language = str_replace(' ', '', $accept_language);
-        $re = preg_match_all("/(.*?);q=([0-9.]+)(?:,?)/i", $accept_language, $matches);
+        $re = preg_match_all('/(.*?);q=([0-9.]+)(?:,?)/i', $accept_language, $matches);
         if ($re) {
             $locales = $this->get_languages($matches[1], $matches[2]);
             $locales = multi_array_sort($locales, 'priority', 'desc');
         }
+
         return $locales;
     }
 
     /**
      * Format languages to new array.
-     *
      */
     public function get_languages(array $lang_tags_arary, array $priority_array)
     {
         $accept_languages = [];
-        foreach ($lang_tags_arary as $key => $lang_tags)
-        {
+        foreach ($lang_tags_arary as $key => $lang_tags) {
             $tags = explode(',', $lang_tags);
-            $priority = isset($priority_array[$key]) ? (int)(floatval($priority_array[$key])*100) : 0;
+            $priority = isset($priority_array[$key]) ? (int) (floatval($priority_array[$key]) * 100) : 0;
             $locale_array = [];
             foreach ($tags as $tag) {
                 $locale = Locale::parseLocale($tag);
@@ -119,9 +109,10 @@ class PreferredLanguageDetector
             $accept_languages[] = [
                 'priority' => $priority,
                 'tags'     => $lang_tags,
-                'locales'  => $locale_array
+                'locales'  => $locale_array,
             ];
         }
+
         return $accept_languages;
     }
 
@@ -129,5 +120,4 @@ class PreferredLanguageDetector
     {
         return $locale + $this->empty_locale;
     }
-
 }
