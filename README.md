@@ -2,7 +2,7 @@ Locator
 =======
 
 [![Latest Stable Version](https://poser.pugx.org/douyasi/locator/v/stable.svg?format=flat-square)](https://packagist.org/packages/douyasi/locator)
-[![Latest Unstable Version](https://poser.pugx.org/douyasi/locator/v/unstable.svg)](https://packagist.org/packages/douyasi/locator)
+[![Latest Unstable Version](https://poser.pugx.org/douyasi/locator/v/unstable.svg?format=flat-square)](https://packagist.org/packages/douyasi/locator)
 [![License](https://poser.pugx.org/douyasi/locator/license?format=flat-square)](https://packagist.org/packages/douyasi/locator)
 [![Total Downloads](https://poser.pugx.org/douyasi/locator/downloads?format=flat-square)](https://packagist.org/packages/douyasi/locator)
 
