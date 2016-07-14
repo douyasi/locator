@@ -13,7 +13,7 @@ use Locale;
 class PreferredLanguageDetector
 {
 
-    private $empty_locale = array(
+    private $empty_locale = [
         'language' => '',
         'script'   => '',
         'region'   => '',
@@ -23,7 +23,7 @@ class PreferredLanguageDetector
         'private1' => '',
         'private2' => '',
         'private3' => '',
-    );
+    ];
 
     /**
      * Alias function for parse_accept_language.
