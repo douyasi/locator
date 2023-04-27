@@ -6,8 +6,6 @@ Locator
 [![License](https://poser.pugx.org/douyasi/locator/license?format=flat-square)](https://packagist.org/packages/douyasi/locator)
 [![Total Downloads](https://poser.pugx.org/douyasi/locator/downloads?format=flat-square)](https://packagist.org/packages/douyasi/locator)
 
-
-
 ### Description
 
 Browser Preferred Language Detector, detect by browser `Accept-Language` request header.
@@ -106,11 +104,11 @@ You can get some data (json format) like blow:
 ### Reference
 
 * [http-accept-language](https://github.com/BaguettePHP/http-accept-language)
+* [Locale Explorer](https://icu4c-demos.unicode.org/icu-bin/locexp)
 
-### License
+### License and Copyright
 
-> MIT
-> Copyright (c) 2016 [douyasi](http://douyasi.com) org by ycrao
+> MIT Copyright (c) 2016 [douyasi](http://douyasi.com) org by ycrao
 
 ### Special Thanks
 
