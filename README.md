@@ -1,5 +1,5 @@
 Locator
-=======
+-------
 
 [![Latest Stable Version](https://poser.pugx.org/douyasi/locator/v/stable.svg?format=flat-square)](https://packagist.org/packages/douyasi/locator)
 [![Latest Unstable Version](https://poser.pugx.org/douyasi/locator/v/unstable.svg?format=flat-square)](https://packagist.org/packages/douyasi/locator)
@@ -8,13 +8,11 @@ Locator
 
 
 
-Description
------------
+### Description
 
 Browser Preferred Language Detector, detect by browser `Accept-Language` request header.
 
-Installation
-------------
+### Installation
 
 Get [Composer](https://getcomposer.org/), then run in terminal:
 
@@ -23,10 +21,9 @@ cd /path/to/your-project
 composer require "douyasi/locator:~1.0"
 ```
 
-Usage
------
+### Usage
 
-### Example in Laravel
+Here is an example in Laravel:
 
 ```php
 Route::get('test', function () {
@@ -37,20 +34,18 @@ Route::get('test', function () {
 });
 ```
 
-
 >   You can use `$detector->detect(['zh-CN', 'en'])` to replace `Request::getPreferredLanguage(['zh-CN', 'en'])` in Laravel.
 
-API
----
+### API
 
-### Detect your browser preferred language:
+#### Detect your browser preferred language:
 
 ```
 $langs = ['zh-CN', 'en'];  //available languages (i18n array) in your web project
 $detector->detect($langs);  //return 'zh-CN' or 'en', according to your browser language preference.
 ```
 
-### Get browser preferrend languages:
+#### Get browser preferred languages:
 
 ```
 $detector->get();
@@ -104,18 +99,19 @@ You can get some data (json format) like blow:
                 "private3": ""
             }
         ]
-    },
+    }
 ]
 ```
 
-Reference
----------
+### Reference
 
- * [http-accept-language](https://github.com/BaguettePHP/http-accept-language)
+* [http-accept-language](https://github.com/BaguettePHP/http-accept-language)
 
-Copyright
----------
+### License
 
-> http://douyasi.com
->
-> Copyright (c) 2016 douyasi org by ycrao
+> MIT
+> Copyright (c) 2016 [douyasi](http://douyasi.com) org by ycrao
+
+### Special Thanks
+
+![JetBrains Logo (Main) logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
